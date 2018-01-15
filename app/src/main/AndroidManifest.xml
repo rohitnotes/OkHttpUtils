@@ -21,7 +21,8 @@
         </activity>
         <activity android:name=".activity.SnowActivity" />
         <activity android:name=".activity.SnowTowActivity" />
-        <activity android:name=".activity.FallingActivity"></activity>
+        <activity android:name=".activity.FallingActivity" />
+        <activity android:name=".activity.EdelweissActivity"></activity>
     </application>
 
 </manifest>

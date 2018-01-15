@@ -16,6 +16,7 @@ import com.bigkoo.convenientbanner.holder.Holder;
 import com.example.dbz.okhttp.NetOkHttpUtils;
 import com.example.dbz.okhttp.log.Log;
 import com.example.dbz.okhttp.okhttp.BaseRequest;
+import com.example.dbz.okhttputils.activity.EdelweissActivity;
 import com.example.dbz.okhttputils.activity.FallingActivity;
 import com.example.dbz.okhttputils.activity.SnowActivity;
 import com.example.dbz.okhttputils.activity.SnowTowActivity;
@@ -38,14 +39,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private static final String URL = HTTPS + "c=lottery&a=lottery_share";
     private static final String BANNER = HTTPS + "c=index&a=index";
     private TextView textView;
-    private Button btnNet, btnActivity, btnTowActivity, btnStop, btnStart, btnFalling;
+    private Button btnNet, btnActivity, btnTowActivity, btnStop, btnStart, btnFalling, btnEdelweiss;
     private ConvenientBanner banner;
     private List<Banner.AderBean> mAderBean;
     private List<String> img = new ArrayList<>();
     private String transforemerName;
     private ABaseTransformer transforemer;
     private String url;
-//    private Snow snow;
+    private Snow snow;
 
     public enum Transformer {
         DefaultTransformer("DefaultTransformer"),
@@ -92,12 +93,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnActivity = findViewById(R.id.btn_activity);
         btnTowActivity = findViewById(R.id.btn_towactivity);
         banner = findViewById(R.id.banner);
-//        snow = findViewById(R.id.snowView);
+        snow = findViewById(R.id.snowView);
         btnStart= findViewById(R.id.btn_start);
         btnStop = findViewById(R.id.btn_stop);
         btnFalling = findViewById(R.id.btn_falling);
+        btnEdelweiss = findViewById(R.id.btn_edelweiss);
+        btnEdelweiss.setOnClickListener(this);
         btnFalling.setOnClickListener(this);
-//        snow.setOnClickListener(this);
+        snow.setOnClickListener(this);
         btnStart.setOnClickListener(this);
         btnStop.setOnClickListener(this);
         btnNet.setOnClickListener(this);
@@ -177,19 +180,23 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Intent intent1 = new Intent(this, SnowTowActivity.class);
                 startActivity(intent1);
                 break;
-//            case R.id.btn_start:
-//                snow.setVisibility(View.VISIBLE);
-//                break;
-//            case R.id.btn_stop:
-//                snow.setVisibility(View.GONE);
-//                break;
-//            case R.id.snowView:
-//                snow.setVisibility(View.GONE);
-//                break;
+            case R.id.btn_start:
+                snow.setVisibility(View.VISIBLE);
+                break;
+            case R.id.btn_stop:
+                snow.setVisibility(View.GONE);
+                break;
+            case R.id.snowView:
+                snow.setVisibility(View.GONE);
+                break;
             case R.id.btn_falling:
                 Intent intent2 = new Intent(this, FallingActivity.class);
                 intent2.putExtra("bitmap", url);
                 startActivity(intent2);
+                break;
+            case R.id.btn_edelweiss:
+                Intent intent3 = new Intent(this, EdelweissActivity.class);
+                startActivity(intent3);
                 break;
         }
     }
