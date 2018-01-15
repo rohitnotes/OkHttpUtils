@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <!--<com.example.dbz.okhttputils.towview.Snow-->
+            <!--android:id="@+id/snowView"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:visibility="gone"-->
+            <!--app:flakeCount="50"-->
+            <!--app:flakeSrc="@drawable/hongbao"-->
+            <!--app:maxSize="80"-->
+            <!--app:minSize="10"-->
+            <!--app:speedX="5"-->
+            <!--app:speedY="10" />-->
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:id="@+id/text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hello World!" />
+
+            <com.bigkoo.convenientbanner.ConvenientBanner
+                android:id="@+id/banner"
+                android:layout_width="match_parent"
+                android:layout_height="280dp"
+                app:canLoop="true">
+
+            </com.bigkoo.convenientbanner.ConvenientBanner>
+
+
+            <Button
+                android:id="@+id/btn_net"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="请求网络" />
+
+            <Button
+                android:id="@+id/btn_activity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="下雪特效" />
+
+            <Button
+                android:id="@+id/btn_towactivity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="下雪特效" />
+
+            <Button
+                android:id="@+id/btn_start"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="开始特效" />
+
+            <Button
+                android:id="@+id/btn_stop"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="停止特效" />
+
+            <Button
+                android:id="@+id/btn_falling"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Falling" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>
